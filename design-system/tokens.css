@@ -1,0 +1,21 @@
+:root {
+  --bg: #fff5dc;
+  --fg: #1a1a1a;
+  --c1: #ff5c8a;
+  --c2: #ffcb47;
+  --c3: #5cd4ff;
+  --c4: #b8ff5c;
+  --c5: #6c4cff;
+  --c6: #ff7e3a;
+  --c7: #2a6fdb;
+  --lavender: #d9c2ff;
+  --white: #ffffff;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-hand: "Caveat", cursive;
+  --radius-card: 16px;
+  --radius-pill: 999px;
+  --border: 2px solid var(--fg);
+  --shadow-card: 4px 4px 0 var(--fg);
+  --shadow-button: 5px 5px 0 var(--c1);
+  --container: 1320px;
+}

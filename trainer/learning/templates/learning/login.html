@@ -1,0 +1,1 @@
+{% extends 'learning/base.html' %}{% block content %}<h1>Понимать. Пробовать. Получаться.</h1><form method="post" class="card">{% csrf_token %}<h2>Вход в тренажёр</h2>{{ form.as_p }}<input type="hidden" name="next" value="{{ next }}"><button>Войти →</button></form>{% endblock %}

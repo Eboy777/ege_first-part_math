@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily Pyaterka backup
+
+[Timer]
+OnCalendar=*-*-* 03:20:00
+Persistent=true
+Unit=pyaterka-backup.service
+
+[Install]
+WantedBy=timers.target

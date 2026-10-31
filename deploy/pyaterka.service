@@ -1,0 +1,22 @@
+[Unit]
+Description=Pyaterka EGE trainer
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=pyaterka
+Group=pyaterka
+WorkingDirectory=/srv/pyaterka/current/trainer
+EnvironmentFile=/etc/pyaterka.env
+ExecStart=/srv/pyaterka/venv/bin/gunicorn config.wsgi:application --bind 127.0.0.1:8091 --workers 2 --threads 4 --worker-class gthread --timeout 90 --access-logfile - --error-logfile - --capture-output --no-control-socket
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/srv/pyaterka/state
+
+[Install]
+WantedBy=multi-user.target

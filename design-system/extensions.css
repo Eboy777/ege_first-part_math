@@ -1,0 +1,9 @@
+/* Additions for future pages: these controls and accessibility states are not extracted from the source. */
+:where(a,button,input,select,textarea,summary):focus-visible {outline:3px solid var(--c7);outline-offset:5px}
+button:disabled {opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.field {display:grid;gap:8px;font-size:14px;font-weight:700}
+.field input,.field select,.field textarea {width:100%;min-height:50px;padding:13px 16px;border:var(--border);border-radius:12px;background:white;color:var(--fg);font:500 15px var(--font-body)}
+.field [aria-invalid="true"] {border-color:#ab2249;box-shadow:3px 3px 0 var(--c1)}
+.field-error {font-size:13px;color:#8e1739;font-weight:600}
+.field input:disabled {background:#ece9e1;color:#595959;cursor:not-allowed}
+@media(prefers-reduced-motion:reduce) {html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}

@@ -1,0 +1,394 @@
+[
+  {
+    "type_id": "1.1",
+    "number": 1,
+    "title": "Прямоугольный треугольник: Пифагор, синус, косинус, тангенс",
+    "illustration_policy": "По условию",
+    "illustration_required": false
+  },
+  {
+    "type_id": "1.2",
+    "number": 1,
+    "title": "Равнобедренные и равносторонние треугольники",
+    "illustration_policy": "По условию",
+    "illustration_required": false
+  },
+  {
+    "type_id": "1.3",
+    "number": 1,
+    "title": "Треугольники общего вида: теоремы синусов и косинусов, площади",
+    "illustration_policy": "По условию",
+    "illustration_required": false
+  },
+  {
+    "type_id": "1.4",
+    "number": 1,
+    "title": "Прямоугольник, квадрат, ромб и параллелограмм",
+    "illustration_policy": "По условию",
+    "illustration_required": false
+  },
+  {
+    "type_id": "1.5",
+    "number": 1,
+    "title": "Трапеция: стороны, высота, средняя линия, площадь",
+    "illustration_policy": "По условию",
+    "illustration_required": false
+  },
+  {
+    "type_id": "1.6",
+    "number": 1,
+    "title": "Окружность: центральные и вписанные углы, дуги",
+    "illustration_policy": "Обязательно",
+    "illustration_required": true
+  },
+  {
+    "type_id": "1.7",
+    "number": 1,
+    "title": "Окружность: хорды, касательные, секущие, вписанные и описанные окружности",
+    "illustration_policy": "Обязательно",
+    "illustration_required": true
+  },
+  {
+    "type_id": "2.1",
+    "number": 2,
+    "title": "Координаты и длина вектора",
+    "illustration_policy": "По условию",
+    "illustration_required": false
+  },
+  {
+    "type_id": "2.2",
+    "number": 2,
+    "title": "Сложение, вычитание и умножение векторов на число",
+    "illustration_policy": "По условию",
+    "illustration_required": false
+  },
+  {
+    "type_id": "2.3",
+    "number": 2,
+    "title": "Скалярное произведение, угол и перпендикулярность векторов",
+    "illustration_policy": "По условию",
+    "illustration_required": false
+  },
+  {
+    "type_id": "3.1",
+    "number": 3,
+    "title": "Куб и прямоугольный параллелепипед",
+    "illustration_policy": "Обязательно",
+    "illustration_required": true
+  },
+  {
+    "type_id": "3.2",
+    "number": 3,
+    "title": "Призмы: элементы, площади, объёмы",
+    "illustration_policy": "Обязательно",
+    "illustration_required": true
+  },
+  {
+    "type_id": "3.3",
+    "number": 3,
+    "title": "Пирамиды: элементы, площади, объёмы",
+    "illustration_policy": "Обязательно",
+    "illustration_required": true
+  },
+  {
+    "type_id": "3.4",
+    "number": 3,
+    "title": "Цилиндр, конус и шар: площади, объёмы, элементы",
+    "illustration_policy": "Обязательно",
+    "illustration_required": true
+  },
+  {
+    "type_id": "3.5",
+    "number": 3,
+    "title": "Составные тела, изменение масштаба, отношения площадей и объёмов",
+    "illustration_policy": "Обязательно",
+    "illustration_required": true
+  },
+  {
+    "type_id": "4.1",
+    "number": 4,
+    "title": "Классическая вероятность: благоприятные и все исходы",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "4.2",
+    "number": 4,
+    "title": "Перебор равновозможных вариантов: выбор предметов, билетов, чисел",
+    "illustration_policy": "По условию",
+    "illustration_required": false
+  },
+  {
+    "type_id": "4.3",
+    "number": 4,
+    "title": "Противоположное событие и простые свойства вероятности",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "5.1",
+    "number": 5,
+    "title": "Произведение вероятностей независимых событий",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "5.2",
+    "number": 5,
+    "title": "Сумма вероятностей событий (совместных/несовместных)",
+    "illustration_policy": "По условию",
+    "illustration_required": false
+  },
+  {
+    "type_id": "5.3",
+    "number": 5,
+    "title": "Вероятность «хотя бы одного» через противоположное событие",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "5.4",
+    "number": 5,
+    "title": "Зависимые события, условная вероятность, дерево исходов",
+    "illustration_policy": "По условию",
+    "illustration_required": false
+  },
+  {
+    "type_id": "5.5",
+    "number": 5,
+    "title": "Повторные испытания и формула Бернулли",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "6.1",
+    "number": 6,
+    "title": "Линейные и квадратные уравнения",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "6.2",
+    "number": 6,
+    "title": "Рациональные и дробно-рациональные уравнения",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "6.3",
+    "number": 6,
+    "title": "Иррациональные уравнения с корнями",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "6.4",
+    "number": 6,
+    "title": "Простейшие показательные уравнения",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "6.5",
+    "number": 6,
+    "title": "Простейшие логарифмические уравнения",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "6.6",
+    "number": 6,
+    "title": "Простейшие тригонометрические уравнения",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "7.1",
+    "number": 7,
+    "title": "Рациональные выражения, дроби, сокращение",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "7.2",
+    "number": 7,
+    "title": "Степени и свойства степеней",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "7.3",
+    "number": 7,
+    "title": "Корни и иррациональные выражения",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "7.4",
+    "number": 7,
+    "title": "Логарифмы и свойства логарифмов",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "7.5",
+    "number": 7,
+    "title": "Тригонометрические значения и тождества",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "8.1",
+    "number": 8,
+    "title": "Геометрический смысл производной: наклон касательной",
+    "illustration_policy": "Обязательно, когда задача по графику",
+    "illustration_required": false
+  },
+  {
+    "type_id": "8.2",
+    "number": 8,
+    "title": "Знак производной и поведение функции по графику функции",
+    "illustration_policy": "Обязательно",
+    "illustration_required": true
+  },
+  {
+    "type_id": "8.3",
+    "number": 8,
+    "title": "Промежутки монотонности и экстремумы по графику производной",
+    "illustration_policy": "Обязательно",
+    "illustration_required": true
+  },
+  {
+    "type_id": "8.4",
+    "number": 8,
+    "title": "Первообразная и связь графиков функции и производной",
+    "illustration_policy": "По условию",
+    "illustration_required": false
+  },
+  {
+    "type_id": "9.1",
+    "number": 9,
+    "title": "Подстановка в прикладную формулу и выражение неизвестной величины",
+    "illustration_policy": "По условию",
+    "illustration_required": false
+  },
+  {
+    "type_id": "9.2",
+    "number": 9,
+    "title": "Прикладные задачи с линейными и квадратными зависимостями",
+    "illustration_policy": "По условию",
+    "illustration_required": false
+  },
+  {
+    "type_id": "9.3",
+    "number": 9,
+    "title": "Прикладные задачи с показательной и логарифмической моделью",
+    "illustration_policy": "По условию",
+    "illustration_required": false
+  },
+  {
+    "type_id": "9.4",
+    "number": 9,
+    "title": "Прикладные задачи с рациональными, корневыми и тригонометрическими формулами",
+    "illustration_policy": "По условию",
+    "illustration_required": false
+  },
+  {
+    "type_id": "10.1",
+    "number": 10,
+    "title": "Движение по прямой и по воде",
+    "illustration_policy": "По условию",
+    "illustration_required": false
+  },
+  {
+    "type_id": "10.2",
+    "number": 10,
+    "title": "Совместная работа и производительность",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "10.3",
+    "number": 10,
+    "title": "Проценты, покупки, скидки, изменения величин",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "10.4",
+    "number": 10,
+    "title": "Смеси, сплавы, растворы и концентрации",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "10.5",
+    "number": 10,
+    "title": "Прогрессии и последовательности в текстовых задачах",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "11.1",
+    "number": 11,
+    "title": "Линейные и кусочно-линейные графики",
+    "illustration_policy": "Обязательно",
+    "illustration_required": true
+  },
+  {
+    "type_id": "11.2",
+    "number": 11,
+    "title": "Параболы и квадратичные функции по графику",
+    "illustration_policy": "Обязательно",
+    "illustration_required": true
+  },
+  {
+    "type_id": "11.3",
+    "number": 11,
+    "title": "Гиперболы и рациональные функции по графику",
+    "illustration_policy": "Обязательно",
+    "illustration_required": true
+  },
+  {
+    "type_id": "11.4",
+    "number": 11,
+    "title": "Графики с корнями, показательные, логарифмические и комбинированные",
+    "illustration_policy": "Обязательно",
+    "illustration_required": true
+  },
+  {
+    "type_id": "12.1",
+    "number": 12,
+    "title": "Квадратичные и многочленные функции: экстремумы",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "12.2",
+    "number": 12,
+    "title": "Рациональные функции: экстремумы",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "12.3",
+    "number": 12,
+    "title": "Степенные и иррациональные функции: экстремумы",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "12.4",
+    "number": 12,
+    "title": "Показательные и логарифмические функции: экстремумы",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  },
+  {
+    "type_id": "12.5",
+    "number": 12,
+    "title": "Тригонометрические функции: экстремумы",
+    "illustration_policy": "Обычно нет",
+    "illustration_required": false
+  }
+]

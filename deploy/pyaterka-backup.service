@@ -1,0 +1,10 @@
+[Unit]
+Description=Private Pyaterka SQLite and media backup
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /srv/pyaterka/current/deploy/backup.py
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true

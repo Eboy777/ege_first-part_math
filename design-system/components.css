@@ -1,0 +1,483 @@
+/* Extracted from https://5-rka.ru/ on 2026-10-30. Original declarations. */
+
+  *,*::before,*::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    --bg: #fff5dc;
+    --fg: #1a1a1a;
+    --c1: #ff5c8a;  /* pink */
+    --c2: #ffcb47;  /* yellow */
+    --c3: #5cd4ff;  /* cyan */
+    --c4: #b8ff5c;  /* lime */
+    --c5: #6c4cff;  /* purple */
+    --c6: #ff7e3a;  /* orange */
+    --c7: #2a6fdb;  /* blue */
+    background-color: var(--bg);
+    background-image:
+      linear-gradient(to right, rgba(80, 130, 200, 0.22) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(80, 130, 200, 0.22) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-position: -1px -1px;
+    color: var(--fg);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; cursor: pointer; background: none; border: 0; }
+  section[id], div[id] { scroll-margin-top: 24px; }
+
+  /* ===== Nav ===== */
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 40px;
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255, 245, 220, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; font-size: 22px; }
+  .brand-mark {
+    width: 40px; height: 40px; background: var(--c1); color: #fff;
+    display: grid; place-items: center; font-weight: 900; font-size: 22px;
+    border-radius: 12px; transform: rotate(-5deg);
+    box-shadow: 4px 4px 0 var(--fg);
+    transition: transform .3s cubic-bezier(.3,1.4,.5,1);
+  }
+  .brand:hover .brand-mark { transform: rotate(5deg); }
+  .nav-links { display: flex; gap: 22px; font-size: 14.5px; font-weight: 700; }
+  .nav-links a { padding: 6px 4px; border-bottom: 2px solid transparent; transition: border-color .15s; }
+  .nav-links a:hover { border-color: var(--fg); }
+  .nav-cta {
+    background: var(--fg); color: #fff; padding: 12px 22px;
+    font-weight: 800; font-size: 14px; border-radius: 999px;
+    box-shadow: 4px 4px 0 var(--c2);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .nav-cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--c2); }
+
+  /* ===== Buttons (shared) ===== */
+  .btn-primary {
+    padding: 18px 32px; border-radius: 999px;
+    background: var(--fg); color: #fff;
+    font-weight: 800; font-size: 15px;
+    box-shadow: 5px 5px 0 var(--c1);
+    display: inline-flex; align-items: center; gap: 10px;
+    transition: all .15s;
+  }
+  .btn-primary:hover { transform: translate(2px, 2px); box-shadow: 3px 3px 0 var(--c1); }
+  .btn-ghost {
+    padding: 16px 24px; border-radius: 999px;
+    background: #fff; color: var(--fg);
+    font-weight: 700; font-size: 15px;
+    border: 2px solid var(--fg);
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .btn-ghost:hover { box-shadow: 4px 4px 0 var(--fg); transform: translate(-2px, -2px); }
+
+  /* ===== Hero ===== */
+  .hero {
+    padding: 48px 40px 24px;
+    max-width: 1320px; margin: 0 auto;
+    position: relative; text-align: center;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 16px; border-radius: 999px;
+    background: var(--c4); color: var(--fg);
+    font-weight: 800; font-size: 13px;
+    border: 2px solid var(--fg);
+    box-shadow: 3px 3px 0 var(--fg);
+    margin-bottom: 28px; transform: rotate(-2deg);
+  }
+  .hero h1 {
+    font-weight: 900; font-size: 96px; line-height: 0.95;
+    letter-spacing: -0.04em; margin: 0; text-wrap: balance;
+  }
+  .hero h1 .pink { color: var(--c1); }
+  .hero h1 .purple { color: var(--c5); display: inline-block; transform: rotate(-2deg); }
+  .hero h1 .hl {
+    background: var(--c2); padding: 0 14px;
+    display: inline-block; transform: rotate(-1deg);
+    border: 2px solid var(--fg);
+  }
+  .hero .lede {
+    font-size: 19px; line-height: 1.5; font-weight: 500;
+    max-width: 56ch; margin: 28px auto 36px;
+  }
+  /* justify-content: center — кнопки, перенесённые на вторую строку (узкий экран,
+     кнопка подарка), встают по центру, а не прилипают к левому краю. */
+  .hero-cta { display: inline-flex; gap: 14px; align-items: center; justify-content: center; flex-wrap: wrap; }
+
+  .hero-stickers .sticker {
+    position: absolute; padding: 9px 16px; border-radius: 999px;
+    font-weight: 800; font-size: 13.5px;
+    border: 2px solid var(--fg); box-shadow: 3px 3px 0 var(--fg);
+    z-index: 2; pointer-events: none;
+  }
+  .hero-stickers .s1 { top: 80px; left: 90px; transform: rotate(-10deg); background: var(--c1); color: #fff; }
+  .hero-stickers .s2 { top: 200px; right: 120px; transform: rotate(7deg); background: var(--c3); }
+  .hero-stickers .s3 { top: 60px; right: 80px; transform: rotate(4deg); background: var(--c4); }
+  .hero-stickers .s4 { top: 280px; left: 60px; transform: rotate(6deg); background: var(--c6); color: #fff; }
+  /* Пятый стикер длиннее остальных: показываем только на широких экранах,
+     иначе он налезает на кнопки первого экрана. */
+  .hero-stickers .s5 { top: 342px; right: 70px; transform: rotate(-6deg); background: var(--c2); }
+  @media (max-width: 1200px) { .hero-stickers .s5 { display: none; } }
+
+  /* Blocks row right under hero */
+  .blocks-wrap {
+    padding: 56px 40px 96px; max-width: 1320px; margin: 0 auto;
+  }
+  /* Шесть материалов — 3 в ряд в два ряда. Шестью в одну строку не встают:
+     слову «вариантов» при кегле 40 нужно 216 px, а колонка даёт 151 px.
+     minmax(0, 1fr) обязателен — с обычным 1fr колонка не сжимается уже слова,
+     и на ноутбуке 1000–1160 px вся страница уезжала вбок. */
+  .blocks {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px;
+    grid-auto-rows: minmax(150px, auto);
+  }
+  .blocks-head {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+  .block {
+    border: 2px solid var(--fg); border-radius: 16px;
+    padding: 22px;
+    display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+    font-weight: 800; font-size: 16px;
+    box-shadow: 4px 4px 0 var(--fg);
+    transition: transform .2s, box-shadow .2s;
+    text-align: left;
+  }
+  .block:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--fg); }
+  .block .big {
+    font-size: 40px; font-weight: 900; line-height: 1; letter-spacing: -0.03em;
+  }
+  .block .lab { font-size: 12.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.85; }
+  .block.b1 { background: var(--c1); color: #fff; }
+  .block.b2 { background: var(--c5); color: #fff; }
+  .block.b3 { background: var(--c3); }
+  .block.b4 { background: var(--c4); }
+  .block.b5 { background: var(--c2); }
+  /* План-конспект — тот же сиреневый, что у его карточки ниже и в кабинете */
+  .block.b6 { background: #d9c2ff; }
+
+  /* ===== Section header pattern ===== */
+  .section { padding: 80px 40px; max-width: 1320px; margin: 0 auto; }
+  .sec-head {
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px;
+    align-items: end; margin-bottom: 48px;
+  }
+  .sec-head .eyebrow {
+    display: inline-block;
+    background: var(--c4); color: var(--fg);
+    padding: 6px 14px; border-radius: 999px;
+    font-weight: 800; font-size: 12.5px;
+    border: 2px solid var(--fg); box-shadow: 3px 3px 0 var(--fg);
+    transform: rotate(-2deg);
+    margin-bottom: 18px;
+  }
+  .sec-head h2 {
+    font-size: 64px; font-weight: 900; line-height: 0.96;
+    letter-spacing: -0.035em; margin: 0;
+    text-wrap: balance;
+  }
+  .sec-head h2 .hl { background: var(--c2); padding: 0 10px; display: inline-block; border: 2px solid var(--fg); }
+  .sec-head h2 .pink { color: var(--c1); }
+  .sec-head h2 .purple { color: var(--c5); }
+  .sec-head h2 .cyan { color: var(--c3); }
+  .sec-head h2 .blue { color: var(--c7); }
+  .sec-head .sec-note {
+    font-size: 17px; line-height: 1.45; font-weight: 500;
+    max-width: 36ch;
+    padding-left: 18px; border-left: 4px solid var(--fg);
+  }
+
+  /* ===== Section 2: How it works (3 steps) ===== */
+  .steps {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    align-items: stretch;
+  }
+  .step {
+    background: #fff;
+    border: 2px solid var(--fg); border-radius: 18px;
+    padding: 28px 26px 32px;
+    box-shadow: 6px 6px 0 var(--fg);
+    transition: transform .2s, box-shadow .2s;
+    position: relative;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .step:nth-child(1) { background: var(--c4); }
+  .step:nth-child(2) { background: var(--c3); }
+  .step:nth-child(3) { background: var(--c2); }
+  .step:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--fg); }
+  .step .step-num {
+    font-size: 88px; font-weight: 900; line-height: 0.85;
+    letter-spacing: -0.04em;
+    -webkit-text-stroke: 2px var(--fg); color: transparent;
+  }
+  .step h3 {
+    font-size: 26px; font-weight: 900; letter-spacing: -0.02em; margin: 0;
+    line-height: 1.1;
+  }
+  .step p {
+    font-size: 15px; line-height: 1.5; font-weight: 500; margin: 0;
+  }
+  .step .step-foot {
+    margin-top: auto; padding-top: 14px;
+    border-top: 2px dashed rgba(0,0,0,0.25);
+    font-size: 12.5px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.04em;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .step .step-foot b { font-size: 14px; }
+
+
+  /* ===== Section 6: Pricing / final CTA ===== */
+  .pricing {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    margin-bottom: 80px;
+  }
+  .plan {
+    background: #fff;
+    border: 2px solid var(--fg); border-radius: 22px;
+    padding: 32px 28px 28px;
+    box-shadow: 6px 6px 0 var(--fg);
+    position: relative;
+    transition: transform .2s, box-shadow .2s;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .plan:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--fg); }
+  /* ⚠️ Центральная карточка — СВЕТЛО-ЗЕЛЁНАЯ (владелец 28.08.2026: фиолетовый
+     «не очень цвет»). Текст на ней чёрный, поэтому все переопределения под
+     белый текст (кружки списка, кнопка) сняты — цвет держит один класс. */
+  .plan.featured { background: var(--c4); color: var(--fg); transform: scale(1.04); z-index: 2; }
+  .plan.featured:hover { transform: scale(1.04) translate(-2px, -2px); }
+  .plan .plan-badge {
+    position: absolute; top: -18px; right: 24px;
+    background: var(--c2); color: var(--fg);
+    padding: 6px 14px; border-radius: 999px;
+    font-weight: 900; font-size: 12px;
+    border: 2px solid var(--fg);
+    box-shadow: 3px 3px 0 var(--fg);
+    transform: rotate(4deg);
+  }
+  .plan .plan-name {
+    font-size: 13px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.06em; opacity: 0.85;
+  }
+  .plan .plan-price {
+    font-size: 64px; font-weight: 900; line-height: 0.9;
+    letter-spacing: -0.035em;
+  }
+  /* Вариант «цены» для длинной фразы вместо числа (правая карточка): кегль
+     меньше, а подпись уходит на свою строку под ней — иначе «по запросу»
+     прилипает к последнему слову и читается как часть заголовка. */
+  .plan .plan-price.plan-price-wide { font-size: 38px; line-height: 1.05; }
+  .plan .plan-price.plan-price-wide small {
+    display: block; margin-left: 0; margin-top: 10px; font-size: 15px;
+  }
+  .plan .plan-price em {
+    font-style: normal; font-size: 26px; font-weight: 800;
+    letter-spacing: 0; margin-right: 4px; opacity: 0.8;
+  }
+  .plan .plan-price small {
+    font-size: 16px; font-weight: 700; letter-spacing: 0;
+    opacity: 0.7; margin-left: 4px;
+  }
+  /* Строка выгоды под ценой (только у центральной карточки).
+     ⚠️ Акция запуска кончилась 10.09.2026 — зачёркнутой цены здесь больше нет,
+     осталась цена года и «лето в подарок». Начнётся новая акция — зачёркнутую
+     цену вписывать сюда руками: лендинг статический и pricing.ts не читает. */
+  .plan .plan-save {
+    font-size: 13.5px; font-weight: 800; line-height: 1.35;
+    margin-top: -4px;
+  }
+  .plan .plan-save s { font-weight: 700; opacity: 0.65; }
+  /* Сноска-звёздочка под кнопкой: откуда взялась цена «в месяц». */
+  .plan .plan-fine {
+    font-size: 11.5px; line-height: 1.45; font-weight: 600;
+    opacity: 0.72; margin: 0;
+  }
+  .plan .plan-desc {
+    font-size: 14.5px; line-height: 1.5; font-weight: 500;
+  }
+  .plan .plan-list {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .plan .plan-list li {
+    font-size: 14px; font-weight: 600;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .plan .plan-list li::before {
+    content: "✓"; font-weight: 900; font-size: 13px;
+    width: 20px; height: 20px;
+    background: var(--c4); color: var(--fg);
+    border: 1.5px solid var(--fg);
+    display: inline-grid; place-items: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .plan.featured .plan-list li::before { background: #fff; }
+  .plan .plan-cta {
+    margin-top: auto;
+    background: var(--fg); color: #fff;
+    padding: 14px 20px; border-radius: 999px;
+    font-weight: 800; font-size: 14px;
+    text-align: center;
+    box-shadow: 4px 4px 0 var(--c1);
+    transition: all .15s;
+  }
+  .plan .plan-cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--c1); }
+  .plan.featured .plan-badge { background: var(--c1); color: #fff; }
+
+
+  /* Big final CTA */
+  .final {
+    background: var(--c1);
+    border: 3px solid var(--fg);
+    border-radius: 24px;
+    padding: 64px 48px;
+    box-shadow: 8px 8px 0 var(--fg);
+    color: #fff;
+    text-align: center;
+    position: relative;
+    margin: 0 40px 80px;
+    max-width: 1240px;
+    margin-left: auto; margin-right: auto;
+    overflow: visible;
+  }
+  .final h2 {
+    font-size: 80px; font-weight: 900; line-height: 0.95;
+    letter-spacing: -0.04em; margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .final h2 .hl { background: var(--c2); color: var(--fg); padding: 0 14px; display: inline-block; transform: rotate(-1deg); border: 2px solid var(--fg); }
+  .final h2 .y { color: var(--c2); }
+  .final p {
+    font-size: 19px; line-height: 1.45; font-weight: 500;
+    max-width: 52ch; margin: 0 auto 32px;
+  }
+  .final .final-cta { display: inline-flex; gap: 14px; align-items: center; }
+  .final .btn-primary { background: var(--c2); color: var(--fg); box-shadow: 5px 5px 0 var(--fg); }
+  .final .btn-primary:hover { box-shadow: 3px 3px 0 var(--fg); }
+  .final .btn-ghost { background: transparent; color: #fff; border-color: #fff; }
+  .final .btn-ghost:hover { background: #fff; color: var(--c1); }
+
+  /* ===== FAQ ===== */
+  .faq {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+  }
+  .faq details {
+    background: #fff; border: 2px solid var(--fg); border-radius: 16px;
+    padding: 22px 24px;
+    box-shadow: 4px 4px 0 var(--fg);
+    transition: transform .15s, box-shadow .15s, background .15s;
+  }
+  .faq details[open] { background: var(--c2); }
+  .faq details:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--fg); }
+  .faq summary {
+    list-style: none; cursor: pointer;
+    font-size: 17px; font-weight: 900; letter-spacing: -0.01em;
+    line-height: 1.3;
+    display: flex; gap: 16px; align-items: center;
+    justify-content: space-between;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: ""; width: 32px; height: 32px; flex-shrink: 0;
+    background-color: var(--fg);
+    background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+    background-repeat: no-repeat;
+    background-position: center center, center center;
+    background-size: 14px 3px, 3px 14px;
+    border-radius: 50%;
+    transition: background-size .2s ease;
+  }
+  .faq details[open] summary::after { background-size: 14px 3px, 3px 0; }
+  .faq details p {
+    font-size: 14.5px; line-height: 1.55; font-weight: 500;
+    margin: 14px 0 0; padding-top: 14px;
+    border-top: 2px dashed rgba(0,0,0,0.25);
+  }
+
+
+  @media (max-width: 980px) {
+    .hero { padding-left: 24px; padding-right: 24px; }
+    .hero h1 { font-size: 56px; }
+    .blocks-wrap, .section { padding-left: 24px; padding-right: 24px; }
+    .blocks { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .block.b1, .block.b2, .block.b3, .block.b4, .block.b5, .block.b6 { grid-column: span 2; }
+    .sec-head { grid-template-columns: 1fr; gap: 24px; }
+    .sec-head h2 { font-size: 42px; }
+    .steps, .mats, .quotes, .pricing { grid-template-columns: 1fr; }
+    .demo-stage, .vs-grid, .faq { grid-template-columns: 1fr; }
+    .safe-grid { grid-template-columns: repeat(2, 1fr); }
+    #platforms .plat-grid, #exam .plat-grid { grid-template-columns: 1fr; }
+    #consultants .cons-layout { grid-template-columns: 1fr; gap: 32px; }
+    #consultants .cons-intro { position: static; }
+    #consultants .cons-intro h2 { font-size: 38px; }
+    #consultants .cons-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .spotlight { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; }
+    .spotlight h3 { font-size: 38px; }
+    .trust-strip { margin-top: -32px; }
+    .mats .mat.m1 { grid-row: auto; }
+    .subj-viewport { margin: 0 -20px; }
+    .subj-viewport::before, .subj-viewport::after { width: 28px; }
+    .subj-rail { padding: 6px 20px; }
+    .subj-card { flex-basis: 180px; }
+    .subj-nav { display: none; }
+    .final h2 { font-size: 48px; }
+    .final { padding: 40px 24px; margin-left: 24px; margin-right: 24px; }
+    .hero-stickers .sticker { display: none; }
+    .nav-links { display: none; }
+  }
+
+  /* ===== Mobile polish (≤520) — the dedicated phone layout ===== */
+  @media (max-width: 520px) {
+    .notebook-margin { display: none; }
+    .nav { padding: 15px 20px; }
+    .brand { font-size: 19px; }
+    .brand-mark { width: 34px; height: 34px; font-size: 19px; }
+    .nav-cta { padding: 10px 16px; font-size: 13px; }
+    .hero { padding: 32px 20px 16px; }
+    .hero h1 { font-size: 38px; }
+    .hero .lede { font-size: 16px; margin: 22px auto 28px; }
+    .btn-primary { padding: 15px 24px; font-size: 14px; }
+    .btn-ghost { padding: 13px 20px; font-size: 14px; }
+    .blocks-wrap { display: none; }
+    .trust-strip { display: none; }
+    .hero-cta .btn-ghost { display: none; }
+    .section { padding: 56px 20px; }
+    .sec-head h2 { font-size: 32px; }
+    .sec-head .sec-note { font-size: 15px; }
+    .step-num { font-size: 64px; }
+    .step h3 { font-size: 22px; }
+    .pk-act h3 { font-size: 20px; }
+    .pk-result-head h3 { font-size: 22px; }
+    .spotlight { padding: 28px 20px; }
+    .spotlight h3 { font-size: 30px; }
+    .spotlight .stats { gap: 22px; flex-wrap: wrap; }
+    .subj-card { flex-basis: 168px; min-height: 158px; }
+    .subj-card .sc-big { font-size: 44px; }
+    .subj-card .sc-name { font-size: 16px; }
+    .subj-viewport::before, .subj-viewport::after { width: 20px; }
+    .sub-card { min-width: 0; }
+    .safe-grid { grid-template-columns: 1fr; }
+    #consultants .cons-grid { grid-template-columns: 1fr; }
+    #consultants .cons-intro h2 { font-size: 30px; }
+    .quote p { font-size: 17px; }
+    .plan .plan-price { font-size: 52px; }
+    .plan.featured { transform: none; }
+    .plan.featured:hover { transform: translate(-2px,-2px); }
+    .final { padding: 36px 20px; margin-left: 20px; margin-right: 20px; }
+    .final h2 { font-size: 34px; }
+    .final p { font-size: 16px; }
+    .final .final-cta { flex-direction: column; align-items: stretch; }
+    .final .confetti.word { display: none; }
+    .trust-strip { margin-top: -20px; padding: 0 20px 36px; }
+    footer { padding: 28px 20px 40px; flex-direction: column; }
+  }
+

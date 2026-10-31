@@ -1,0 +1,19 @@
+[Unit]
+Description=Pyaterka review push notifications
+After=network-online.target pyaterka.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=pyaterka
+Group=pyaterka
+WorkingDirectory=/srv/pyaterka/current
+EnvironmentFile=/etc/pyaterka.env
+ExecStart=/srv/pyaterka/venv/bin/python trainer/stage2.py send_review_notifications
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/srv/pyaterka/state
+TimeoutStartSec=120

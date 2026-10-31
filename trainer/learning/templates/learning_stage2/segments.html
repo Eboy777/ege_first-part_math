@@ -1,0 +1,1 @@
+<div class="segments" role="img" aria-label="{{ row.completed }} из 5: три обучающих и два контрольных">{% for segment in row.segments %}<i class="{% if segment.done %}done{% endif %} {% if segment.control %}control{% endif %}"></i>{% endfor %}</div><div class="segments-labels"><span>1–3 · обучение</span><span>4–5 · контроль</span></div>
