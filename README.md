@@ -52,7 +52,7 @@ python trainer/stage2.py demo_mistakes student_b
 ```bash
 python trainer/stage2.py check
 python trainer/stage2.py makemigrations --check --dry-run
-python trainer/stage2.py test learning.tests.StageTwoTests learning.tests_training learning.tests_chat.ChatTests learning.tests_reviews.ReviewTests learning.tests_reviews.NotificationTests learning.tests_mistakes.MistakesTests learning.tests_deployment.ProxyAddressTests
+python trainer/stage2.py test learning.tests.StageTwoTests learning.tests_training learning.tests_chat.ChatTests learning.tests_reviews.ReviewTests learning.tests_reviews.NotificationTests learning.tests_mistakes.MistakesTests learning.tests_deployment.ProxyAddressTests learning.tests_login_mobile.MobileLoginTests
 (cd trainer/prompts && python -m unittest discover -s tests)
 ```
 

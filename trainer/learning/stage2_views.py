@@ -3,7 +3,7 @@ from django.conf import settings
 from datetime import timedelta
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_not_required
-from django.contrib.auth.forms import AuthenticationForm
+from .forms import StudentLoginForm
 from django.db.models import F
 from django.http import JsonResponse, HttpResponseNotAllowed
 from django.shortcuts import get_object_or_404, redirect, render
@@ -15,7 +15,7 @@ from .models import ExamVersion, ExamNumber, TaskType, Progress, LoginFailure
 WINDOW = timedelta(minutes=15)
 
 def throttle_keys(request, username):
-    return [(hashlib.sha256(('account:' + username.casefold()).encode()).hexdigest(), 5), (hashlib.sha256(('ip:' + request.META.get('REMOTE_ADDR', '')).encode()).hexdigest(), 30)]
+    return [(hashlib.sha256(('account:' + username.strip().casefold()).encode()).hexdigest(), 5), (hashlib.sha256(('ip:' + request.META.get('REMOTE_ADDR', '')).encode()).hexdigest(), 30)]
 
 def throttled(keys):
     return any(LoginFailure.objects.filter(key=k, count__gte=limit, window_start__gt=timezone.now()-WINDOW).exists() for k, limit in keys)
@@ -33,7 +33,7 @@ def login_page(request):
         return HttpResponseNotAllowed(['GET', 'POST'])
     if request.user.is_authenticated:
         return redirect('home')
-    form = AuthenticationForm(request, data=request.POST if request.method=='POST' else None)
+    form = StudentLoginForm(request, data=request.POST if request.method=='POST' else None)
     status = 200
     rate_error = None
     if request.method == 'POST':
